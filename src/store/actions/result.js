@@ -8,7 +8,8 @@ export const saveResult = (res) => {
 }
 
 export const storeResult = (res) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        console.log(getState()); //oldState. May be required to perform async task.
         setTimeout(() => {
             dispatch(saveResult(res))
         }, 2000)
